@@ -1,14 +1,16 @@
 package fools;
 
+import static fools.Ho.DSA;
+
 public class fool {
     public static void main(String[] args) {
-        Ho dsa = Ho.DSA;
 
-        System.out.println(dsa.toString());
-        System.out.println(dsa);
+        System.out.println(DSA.toString());
+        System.out.println(DSA);
+
+        Ko ko = new Ko();
+        ko.setName("abc");
     }
 
-    public enum Ho {
-        ABC, DSA;
-    }
+
 }

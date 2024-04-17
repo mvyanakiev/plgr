@@ -7,6 +7,7 @@ public class Todo {
     public Todo(String title, String text) {
         this.title = title;
         this.text = text;
+        this.createdOn = new Date();
     }
 
     private String title;

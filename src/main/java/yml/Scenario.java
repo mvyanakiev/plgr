@@ -2,10 +2,7 @@ package yml;
 
 public class Scenario {
 
-//    @JsonProperty("name")
     private String name;
-
-//    @JsonProperty("age")
     private int age;
 
     public String getName() {

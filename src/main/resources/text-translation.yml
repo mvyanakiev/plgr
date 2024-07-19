@@ -1,0 +1,11 @@
+kind: "PromptTemplate"
+spec:
+  description: Translate English book title and description for a given language
+  template: |
+    Translate the text: { "title" : "{{$title}}" , "description":"{{$description}}" } to the language i18n locale {{$locale}}.
+    Reply in the format as a JSON : {"title" : "<translated_title>" , "description" : "<translated_description>"}.
+    Note: Do not return any extra text apart from the JSON!
+  inputs:
+    - name: title
+    - name: description
+    - name: locale

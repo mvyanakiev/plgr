@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class AnyStuff {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         System.out.println(System.currentTimeMillis());
 
@@ -32,5 +32,13 @@ public class AnyStuff {
         studentHashMap.replace("A", student);
 
         System.out.println("debug");
+
+        for (int i = 0; i < 50; i++) {
+            System.out.print(". ");
+            Thread.sleep(250);
+        }
+
+
+
     }
 }

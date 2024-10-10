@@ -51,7 +51,6 @@
             <artifactId>compiler</artifactId>
             <version>0.9.11</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/com.github.javafaker/javafaker -->
         <dependency>
             <groupId>com.github.javafaker</groupId>
             <artifactId>javafaker</artifactId>

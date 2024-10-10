@@ -23,7 +23,6 @@ class LibraryServiceTest {
 
     @Test
     public void testCreateAuthorAndBook() {
-        // Arrange
         String firstName = faker.name().firstName();
         String lastName = faker.name().lastName();
         int age = faker.random().nextInt(20, 80);
@@ -31,10 +30,8 @@ class LibraryServiceTest {
         int year = currentYear - 5;
         int issn = faker.random().nextInt(500, 1000);
 
-        // Act
         AuthorBookPair actual = libraryService.createAuthorAndBook(firstName, lastName, age, title, year, issn);
 
-        // Assert
         assertEquals(firstName, actual.getAuthor().getFirstName());
         assertEquals(lastName, actual.getAuthor().getLastName());
         assertEquals(age, actual.getAuthor().getAge());
@@ -45,7 +42,6 @@ class LibraryServiceTest {
 
     @Test
     public void testCreateAuthorAndBookInvalidInput() {
-        // Arrange
         String firstName = faker.name().firstName();
         String lastName = faker.name().lastName();
         int age = faker.random().nextInt(20, 80);
@@ -53,7 +49,6 @@ class LibraryServiceTest {
         int year = currentYear + 5;
         int issn = faker.random().nextInt(1, 100);
 
-        // Act and Assert
         try {
             libraryService.createAuthorAndBook(firstName, lastName, age, title, year, issn);
         } catch (IllegalArgumentException e) {
@@ -63,7 +58,6 @@ class LibraryServiceTest {
 
     @Test
     public void testCreateBook() {
-        // Arrange
         String firstName = faker.name().firstName();
         String lastName = faker.name().lastName();
         int age = faker.random().nextInt(20, 80);
@@ -72,10 +66,8 @@ class LibraryServiceTest {
         int issn = faker.random().nextInt(1, 100);
         Author author = libraryService.createAuthor(firstName, lastName, age);
 
-        // Act
         Book actual = libraryService.createBook(title, author, year, issn);
 
-        // Assert
         assertEquals(title, actual.getTitle());
         assertEquals(author, actual.getAuthor());
         assertEquals(year, actual.getYear());
@@ -84,7 +76,6 @@ class LibraryServiceTest {
 
     @Test
     public void testCreateBookInvalidYear() {
-        // Arrange
         String firstName = faker.name().firstName();
         String lastName = faker.name().lastName();
         int age = faker.random().nextInt(20, 80);
@@ -93,7 +84,6 @@ class LibraryServiceTest {
         int issn = faker.random().nextInt(1, 100);
         Author author = libraryService.createAuthor(firstName, lastName, age);
 
-        // Act and Assert
         try {
             libraryService.createBook(title, author, year, issn);
         } catch (IllegalArgumentException e) {
@@ -103,7 +93,6 @@ class LibraryServiceTest {
 
     @Test
     public void testCreateBookInvalidYearZero() {
-        // Arrange
         String firstName = faker.name().firstName();
         String lastName = faker.name().lastName();
         int age = faker.random().nextInt(20, 80);
@@ -112,7 +101,6 @@ class LibraryServiceTest {
         int issn = faker.random().nextInt(1, 100);
         Author author = libraryService.createAuthor(firstName, lastName, age);
 
-        // Act and Assert
         try {
             libraryService.createBook(title, author, year, issn);
         } catch (IllegalArgumentException e) {
@@ -127,10 +115,8 @@ class LibraryServiceTest {
         String lastName = faker.name().lastName();
         int age = faker.random().nextInt(20, 80);
 
-        // Act
         Author actual = libraryService.createAuthor(firstName, lastName, age);
 
-        // Assert
         assertEquals(firstName, actual.getFirstName());
         assertEquals(lastName, actual.getLastName());
         assertEquals(age, actual.getAge());
@@ -138,12 +124,10 @@ class LibraryServiceTest {
 
     @Test
     public void testCreateAuthorInvalidAge() {
-        // Arrange
         String firstName = faker.name().firstName();
         String lastName = faker.name().lastName();
         int age = faker.random().nextInt(-80, 0);
 
-        // Act and Assert
         try {
             libraryService.createAuthor(firstName, lastName, age);
         } catch (IllegalArgumentException e) {
@@ -153,10 +137,7 @@ class LibraryServiceTest {
 
     @Test
     public void testCurrentYear() {
-        // Act
         int actual = libraryService.currentYear();
-
-        // Assert
         assertEquals(currentYear, actual);
     }
 

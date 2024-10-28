@@ -22,7 +22,7 @@ class LibraryServiceTest {
     }
 
     @Test
-    public void testCreateAuthorAndBook() {
+    void testCreateAuthorAndBook() {
         String firstName = faker.name().firstName();
         String lastName = faker.name().lastName();
         int age = faker.random().nextInt(20, 80);
@@ -41,7 +41,7 @@ class LibraryServiceTest {
     }
 
     @Test
-    public void testCreateAuthorAndBookInvalidInput() {
+    void testCreateAuthorAndBookInvalidInput() {
         String firstName = faker.name().firstName();
         String lastName = faker.name().lastName();
         int age = faker.random().nextInt(20, 80);
@@ -57,7 +57,7 @@ class LibraryServiceTest {
     }
 
     @Test
-    public void testCreateBook() {
+    void testCreateBook() {
         String firstName = faker.name().firstName();
         String lastName = faker.name().lastName();
         int age = faker.random().nextInt(20, 80);
@@ -75,7 +75,7 @@ class LibraryServiceTest {
     }
 
     @Test
-    public void testCreateBookInvalidYear() {
+    void testCreateBookInvalidYear() {
         String firstName = faker.name().firstName();
         String lastName = faker.name().lastName();
         int age = faker.random().nextInt(20, 80);
@@ -92,7 +92,7 @@ class LibraryServiceTest {
     }
 
     @Test
-    public void testCreateBookInvalidYearZero() {
+    void testCreateBookInvalidYearZero() {
         String firstName = faker.name().firstName();
         String lastName = faker.name().lastName();
         int age = faker.random().nextInt(20, 80);
@@ -109,7 +109,7 @@ class LibraryServiceTest {
     }
 
     @Test
-    public void testCreateAuthor() {
+    void testCreateAuthor() {
         // Arrange
         String firstName = faker.name().firstName();
         String lastName = faker.name().lastName();
@@ -123,7 +123,7 @@ class LibraryServiceTest {
     }
 
     @Test
-    public void testCreateAuthorInvalidAge() {
+    void testCreateAuthorInvalidAge() {
         String firstName = faker.name().firstName();
         String lastName = faker.name().lastName();
         int age = faker.random().nextInt(-80, 0);
@@ -136,7 +136,7 @@ class LibraryServiceTest {
     }
 
     @Test
-    public void testCurrentYear() {
+    void testCurrentYear() {
         int actual = libraryService.currentYear();
         assertEquals(currentYear, actual);
     }

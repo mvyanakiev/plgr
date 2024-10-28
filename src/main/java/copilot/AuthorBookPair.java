@@ -28,7 +28,4 @@ public class AuthorBookPair {
         this.book = book;
     }
 
-    public boolean equals(AuthorBookPair obj) {
-        return this.author.equals(obj.getAuthor()) && this.book.equals(obj.getBook());
-    }
 }
